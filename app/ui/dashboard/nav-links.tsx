@@ -4,7 +4,9 @@ import {
   HomeIcon,
   DocumentDuplicateIcon,
   UserCircleIcon,
+  AcademicCapIcon,
 } from '@heroicons/react/24/outline';
+import { UsersIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -19,6 +21,7 @@ const links = [
   },
   { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
   { name: 'My test page', href: '/dashboard/mypage', icon: UserCircleIcon },
+  { name: 'Admin page', href: '/dashboard/admin', icon: UsersIcon },
 ];
 
 export default function NavLinks() {
@@ -35,18 +38,10 @@ export default function NavLinks() {
             <Link
               href={link.href}
               key={link.name}
-              // className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
-
-              // className={clsx(
-              //   activeLink == link.href
-              //     ? 'color yellow flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-red-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3'
-              //     : 'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
-              // )}
-
               className={clsx(
-                'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+                'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-green-400 hover:text-red-600 md:flex-none md:justify-start md:p-2 md:px-3',
                 {
-                  'bg-sky-100 text-blue-600': activeLink === link.href,
+                  'bg-sky-500 text-yellow-200': activeLink === link.href,
                 },
               )}
             >
